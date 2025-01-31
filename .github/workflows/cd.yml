@@ -28,4 +28,5 @@ jobs:
 
       - name: Desplegar en Cloud Run
         run: |
-          gcloud run deploy ci-cd-ia --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/ci-cd-ia:latest --platform managed --region us-central1 --allow-unauthenticated
+          gcloud run deploy ci-cd-ia --image us-docker.pkg.dev/laboratorioia-449403/my-docker-repo/ci-cd-ia:latest --platform managed --region us-central1 --allow-unauthenticated
+        

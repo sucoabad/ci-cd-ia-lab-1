@@ -10,6 +10,14 @@ jobs:
   test-training:
     runs-on: ubuntu-latest
     steps:
+      - name: Autenticarse en Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Configurar Docker para Google Artifact Registry
+        run: gcloud auth configure-docker us-docker.pkg.dev
+
       - name: Clonar repositorio
         uses: actions/checkout@v3
 
