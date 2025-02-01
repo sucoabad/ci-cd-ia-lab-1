@@ -5,7 +5,7 @@ import pickle
 # Cargar dataset MNIST
 (x_train, y_train), (x_test, y_test) = keras.datasets.mnist.load_data()
 x_train, x_test = x_train / 255.0, x_test / 255.0
-
+ 
 # Definir modelo
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
